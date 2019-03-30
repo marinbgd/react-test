@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { hot } from "react-hot-loader";
-import AuthRootSwitcher from "./AuthRootSwitcher";
+import { hot } from 'react-hot-loader';
+import AuthRootSwitcher from './AuthRootSwitcher';
 
 
 class Root extends Component {
-    render() {
-        return <AuthRootSwitcher />
+    render () {
+        return <AuthRootSwitcher/>;
     }
 }
 

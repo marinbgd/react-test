@@ -1,17 +1,15 @@
-const TRANSLATION_URL_MAP = {
-    'users': 'HEADER.USERS',
-    'KYC': 'HEADER.KYC',
-    'mail': 'HEADER.MAIL',
-    '/': 'HEADER.HOME',
+const URL_TO_NAME_MAP = {
+    'leads': 'Leads',
+    '/': 'Home',
 };
 
-export const getTitleFromLocation = (pathname, translate) => {
+export const getTitleFromLocation = (pathname) => {
     let foundTitle;
-    const urls = Object.keys(TRANSLATION_URL_MAP);
+    const urls = Object.keys(URL_TO_NAME_MAP);
     for (let i = 0, length = urls.length; i < length; i += 1) {
         let url = urls[i];
         if ( ~pathname.indexOf(url) ) {
-            foundTitle = translate(TRANSLATION_URL_MAP[url]);
+            foundTitle = URL_TO_NAME_MAP[url];
             break;
         }
     }

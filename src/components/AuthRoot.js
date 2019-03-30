@@ -12,14 +12,13 @@ import RedirectHome from 'Common/Redirect/RedirectHome';
 import Notification from "Common/Notification/Notification";
 
 
-const HomePage = Loadable.Map( {
-    loader: {
-        HomePage: () => import('./HomePage/HomePage'),
-    },
-    render( loaded, props ) {
-        const HomePage = loaded.HomePage.default;
-        return <HomePage {...props} />;
-    },
+const HomePage = Loadable( {
+    loader: () => import('./HomePage/HomePage'),
+    loading: Loader,
+} );
+
+const LeadsPage = Loadable( {
+    loader: () => import('./Leads/Leads'),
     loading: Loader,
 } );
 
@@ -38,6 +37,7 @@ class AuthRoot extends Component {
                 <main className="main">
                     <Switch>
                         <Route exact path={APP_ROUTES.HOME} render={ () => <HomePage username={this.props.username} />} />
+                        <Route exact path={APP_ROUTES.LEADS} component={LeadsPage} />
                         <Route path={APP_ROUTES.LOGIN} component={RedirectHome} />
                         <Route component={NotFoundPage} />
                     </Switch>
