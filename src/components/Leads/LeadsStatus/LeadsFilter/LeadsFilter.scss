@@ -1,0 +1,25 @@
+.LeadsFilter {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.ButtonFilter {
+  display: inline-block;
+  background-color: $colorDarkBlue;
+  color: $colorGreyLight;
+  transition: color 0.15s;
+  padding: 0.5em;
+  margin: 0.25em;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+  }
+}
+
+.ButtonFilterActive {
+  background-color: $colorGreen;
+  color: $colorGreyLightest;
+}

@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './PageTopSelector.scss';
 import { NavLink } from 'react-router-dom';
-import ROUTES from '../Leads.routes';
-// import { getLink } from '../KYCStatus/PlatformSelector/PlatformSelector.helper';
+import ROUTES from '../../Leads.routes';
 
 
 const PageTopSelector = () => {
@@ -13,7 +12,7 @@ const PageTopSelector = () => {
                     className={'btn ' + styles.Link}
                     activeClassName={styles.Link__active}
                     exact
-                    to={ROUTES.TYPES.INDEX}>
+                    to={ROUTES.TYPES.ALL}>
                     All Leads
                 </NavLink>
                 <NavLink
