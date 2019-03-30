@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Header from './Common/Header/Header';
 import { Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router';
@@ -6,10 +8,9 @@ import Footer from './Common/Footer/Footer';
 import Loadable from 'react-loadable';
 import Loader from './Common/Loader/Loader';
 import APP_ROUTES from 'Config/appRoutes';
+import RedirectHome from 'Common/Redirect/RedirectHome';
 import Notification from "Common/Notification/Notification";
 
-
-const MockUserName = 'Vladimir';
 
 const HomePage = Loadable.Map( {
     loader: {
@@ -27,15 +28,17 @@ const NotFoundPage = Loadable( {
     loading: Loader,
 } );
 
+
 class AuthRoot extends Component {
     render() {
         return (
             <React.Fragment>
-                <Header agentName={ MockUserName } />
+                <Header username={this.props.username}/>
 
                 <main className="main">
                     <Switch>
-                        <Route exact path={APP_ROUTES.HOME} render={ () => <HomePage agentName={ MockUserName } />} />
+                        <Route exact path={APP_ROUTES.HOME} render={ () => <HomePage username={this.props.username} />} />
+                        <Route path={APP_ROUTES.LOGIN} component={RedirectHome} />
                         <Route component={NotFoundPage} />
                     </Switch>
 
@@ -48,4 +51,12 @@ class AuthRoot extends Component {
     }
 }
 
-export default withRouter( AuthRoot );
+AuthRoot.propTypes = {
+    username: PropTypes.string.isRequired,
+};
+
+const mapStateToProps = state => ({
+    username: (state.UserReducer.data && state.UserReducer.data.user && state.UserReducer.data.user.name),
+});
+
+export default withRouter( connect( mapStateToProps )( AuthRoot ) );

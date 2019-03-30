@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './UserMenu.scss';
+import Logout from '../Logout/Logout';
 
 
 const getMenuOpenedIconClassName = (isOpened) => {
@@ -16,14 +17,14 @@ const getMenuOpenedIconClassName = (isOpened) => {
 class UserMenu extends Component {
 
     state = {
-        isMenuOpened: false,
+        isMenuOpened: false
     };
 
-    componentDidMount() {
+    componentDidMount () {
         document.addEventListener('mousedown', this.clickOutsideHandler);
     }
 
-    componentWillUnmount() {
+    componentWillUnmount () {
         document.removeEventListener('mousedown', this.clickOutsideHandler);
     }
 
@@ -42,30 +43,30 @@ class UserMenu extends Component {
     };
 
     toggleMenu = () => {
-        this.setState( state => ({
-            isMenuOpened: !state.isMenuOpened,
+        this.setState(state => ({
+            isMenuOpened: !state.isMenuOpened
         }));
     };
 
     closeMenu = () => {
-        this.setState({ isMenuOpened: false });
+        this.setState({isMenuOpened: false});
     };
 
-    render() {
+    render () {
         return (
             <nav className={styles.UserMenu} ref={this.setWrapperRef}>
                 <button
-                    className={ ['btn btn--link', styles.Button].join(' ') }
+                    className={['btn btn--link', styles.Button].join(' ')}
                     onClick={this.buttonClickHandler}
                 >
-                    {this.props.agentName}
-                    <span className={getMenuOpenedIconClassName(this.state.isMenuOpened)} >&#62;</span>
+                    {this.props.username}
+                    <span className={getMenuOpenedIconClassName(this.state.isMenuOpened)}>&#62;</span>
                 </button>
 
                 {
                     this.state.isMenuOpened &&
                     <ul>
-                        <li className={styles.ListItem}>Logout</li>
+                        <li className={styles.ListItem}><Logout/></li>
                     </ul>
                 }
 
@@ -75,11 +76,11 @@ class UserMenu extends Component {
 }
 
 UserMenu.propTypes = {
-    agentName: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired
 };
 
 UserMenu.defaultProps = {
-    agentName: 'agent',
+    username: 'agent'
 };
 
 export default UserMenu;

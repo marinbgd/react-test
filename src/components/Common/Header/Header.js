@@ -4,7 +4,7 @@ import UserMenu from 'Common/Header/UserMenu/UserMenu'
 import styles from './Header.scss'
 
 
-const Header = ({agentName}) => {
+const Header = ({username}) => {
 
     return (
         <header className={styles.Header}>
@@ -12,7 +12,7 @@ const Header = ({agentName}) => {
             <div className="wrapper position-relative">
 
                 <aside className={styles.UserMenuHolder}>
-                    <UserMenu agentName={agentName}/>
+                    <UserMenu username={username}/>
                 </aside>
 
                 <h1 className={styles.Title}>Home</h1>
@@ -22,7 +22,7 @@ const Header = ({agentName}) => {
 }
 
 Header.propTypes = {
-    agentName: PropTypes.string.isRequired
+    username: PropTypes.string.isRequired
 }
 
 export default Header

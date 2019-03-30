@@ -5,7 +5,7 @@ import styles from './Footer.scss';
 const Footer = () => {
     return (
         <footer className={styles.Footer}>
-            <p>Copyright 2019.</p>
+            <p>2019 ©</p>
         </footer>
     );
 };
