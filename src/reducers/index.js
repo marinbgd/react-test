@@ -4,11 +4,13 @@ import { LOGOUT_SUCCESS } from 'Common/Header/Logout/Logout.actionTypes';
 import { clearPersistentLoginData } from '../components/User/User.persistentHelper';
 import UserReducer from '../components/User/User.reducer';
 import LogoutReducer from 'Common/Header/Logout/Logout.reducer';
+import LeadsReducer from '../components/Leads/Leads.reducer';
 
 
 const rootReducer = combineReducers( {
     UserReducer,
     LogoutReducer,
+    LeadsReducer,
     routing: routerReducer,
 } );
 

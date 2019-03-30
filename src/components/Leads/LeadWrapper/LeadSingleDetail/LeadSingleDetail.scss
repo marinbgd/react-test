@@ -1,0 +1,14 @@
+.SingleDetail {
+  display: block;
+  padding-bottom: 0.125em;
+}
+.SingleDetailLabel {
+  display: inline-block;
+  min-width: 7em;
+  color: $colorGrey;
+  padding-right: 1em;
+}
+.SingleDetailValue {
+  display: inline-block;
+  color: $colorGreyDark;
+}

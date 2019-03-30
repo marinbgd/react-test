@@ -13,7 +13,7 @@ class Leads extends Component {
                 <div className="wrapper">
                     <h1>Leads</h1>
 
-                    {/*key will ensure rendering new component for different type*/}
+                    {/* key will ensure rendering new component when type changes */}
                     <Route path={LEADS_ROUTES.TYPES.INDEX + '/:type?'} render={({match}) => (<LeadStatus key={match.params.type} />)}/>
                 </div>
             </Fragment>
