@@ -1,0 +1,41 @@
+/* this widget needs parent/holder to have 'position: relative;' */
+
+.NotLoadedWidgetWrapper {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.NotLoadedWidget {
+	display: table-cell;
+	vertical-align: middle;
+
+	color: $colorGreyLight;
+	text-align: center;
+	padding: 2em;
+}
+
+.NotLoadedWidget__title {
+	font-size: 17px;
+	font-weight: bold;
+	color: $colorGreyLight;
+	padding: .75em 0;
+}
+
+.NotLoadedWidget__refreshBtn {
+
+	margin-top: .5em;
+	padding: 1em 1em .4em;
+
+	font-size: 12px;
+	font-weight: bold;
+	color: $colorGreyBluish;
+	border-bottom: 2px solid $colorDarkBlue;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $colorGold;
+        border-bottom: 2px solid $colorDarkBlue;
+	}
+}

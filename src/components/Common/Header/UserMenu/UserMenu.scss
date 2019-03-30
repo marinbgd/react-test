@@ -1,0 +1,29 @@
+.UserMenu {
+    color: $colorGreyLight;
+    text-align: right;
+    min-width: 7em;
+}
+
+.Button {
+    width: 100%;
+    padding: 0.5em;
+    text-align: right;
+}
+
+.ListItem {
+    padding: 0.5em 0;
+    border-top: 1px solid $colorGreyLight;
+}
+
+.Icon {
+    display: inline-block;
+    transition: all 0.15s;
+    position: relative;
+    margin-left: 0.5em;
+}
+.Icon--isOpened {
+    transform: rotate(-90deg);
+}
+.Icon--isClosed {
+    transform: rotate(90deg);
+}

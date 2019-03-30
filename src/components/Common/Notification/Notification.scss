@@ -1,0 +1,21 @@
+.Notification__Card {
+    border-radius: 6px;
+    padding-left: 25px;
+}
+
+.Button__close {
+    border-radius: 6px;
+    color: $colorWhite;
+    font-size: 15px;
+}
+
+:global {
+    .Toastify__toast--success {
+        background-color: $colorSuccessGreen;
+    }
+
+    .Toastify__toast--error {
+        background-color: $colorFailRed;
+    }
+}
+

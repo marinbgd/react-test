@@ -1,0 +1,129 @@
+:global {
+    .btn {
+        color: $colorGreyLight;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        cursor: pointer;
+
+        transition: background-color, color, border, 0.15s;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: #fff;
+        }
+
+        &:disabled {
+            color: $colorGreyLight;
+            cursor: not-allowed;
+        }
+    }
+
+    .btn--link {
+        border-color: transparent;
+        background-color: transparent;
+        color: inherit;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border-color: transparent;
+        }
+
+        &:disabled {
+            font-style: italic;
+        }
+    }
+
+    .btn--block {
+        display: block;
+    }
+
+    .btn--active {
+        color: #fff;
+    }
+
+    .btn--submit {
+        display: block;
+        padding: 1em 2em;
+        border-radius: 31px;
+        color: #fff;
+        background-color: $colorGreen;
+
+        &:focus,
+        &:hover,
+        &:active {
+            background-color: lighten($colorGreen, 10%);
+        }
+    }
+
+    .btn--blue-submit {
+        display: inline-block;
+        min-width: 225px;
+        text-align: center;
+        color: #fff;
+        background-color: $colorDarkBlue;
+        margin-top: 2em;
+        padding: 1.5em 4em;
+        border-radius: 3px;
+
+        &:focus,
+        &:hover,
+        &:active {
+            background-color: lighten($colorDarkBlue, 10%);
+        }
+    }
+
+    .btn--orange {
+        display: inline-block;
+        min-width: 225px;
+        margin-top: 1em;
+        padding: 1em 2em;
+        border-radius: 3px;
+        text-align: center;
+        color: #fff;
+        background-color: $colorGold;
+
+        &:focus,
+        &:hover,
+        &:active {
+            background-color: lighten($colorGold, 10%);
+        }
+    }
+
+    .btn--back {
+        display: inline-block;
+        min-width: 225px;
+        margin-top: 2em;
+        padding: 1.5em 4em;
+        border-radius: 3px;
+        text-align: center;
+        color: $colorDarkBlue;
+        background-color: transparent;
+
+        &:focus,
+        &:hover,
+        &:active {
+            color: lighten($colorDarkBlue, 10%);
+        }
+    }
+
+    .btn--rounded {
+        border-color: $colorWhiteGrey;
+        background-color: $colorWhiteGrey;
+        padding: 0.6em 1.5em;
+        border-radius: 16px;
+        color: $colorGrey;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $colorGreyDark;
+            background-color: darken($colorWhiteGrey, 10);
+        }
+
+        &:disabled {
+            font-style: italic;
+        }
+    }
+}
