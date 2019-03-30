@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 import UserMenu from 'Common/Header/UserMenu/UserMenu';
 import HeaderNavigation from './HeaderNavigation/HeaderNavigation';
 import { getTitleFromLocation } from './Header.util';
@@ -18,7 +19,7 @@ const Header = ({username}) => {
                     <UserMenu username={username}/>
                 </aside>
 
-                <h1 className={styles.Title}>{ getTitleFromLocation(location.pathname) }</h1>
+                <h1 className={styles.Title}>{getTitleFromLocation(location.pathname)}</h1>
             </div>
         </header>
     );
@@ -26,7 +27,7 @@ const Header = ({username}) => {
 
 Header.propTypes = {
     username: PropTypes.string.isRequired,
-    location: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired
 };
 
-export default Header;
+export default withRouter(Header);

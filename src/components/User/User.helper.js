@@ -1,7 +1,7 @@
 // import { MANAGER } from 'User.roles';
 
 
-export const isUserAdminForModuleId = ( permissions, moduleId ) => {
+export const isUserAdminForModuleId = ( ) => {
     let isAdmin = false;
     return isAdmin;
 };

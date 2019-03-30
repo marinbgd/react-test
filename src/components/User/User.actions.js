@@ -12,7 +12,7 @@ import _find from 'lodash/find';
 import { USERS as MOCK_USERS } from '../../mock/login.mock';
 
 
-const loginApi = (username, password) => {
+const loginApi = username => {
     let foundUser = _find(MOCK_USERS, {name: username});
     if (foundUser) {
         return Promise.resolve(foundUser);

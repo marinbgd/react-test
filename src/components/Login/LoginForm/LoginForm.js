@@ -34,8 +34,8 @@ class LoginForm extends Component {
                         <h1 className={styles.Subtitle}>Please login</h1>
 
                         <aside className={styles.Notification}>
-                            To login as <strong>manager</strong> use "Dorotej" username<br/>
-                            To login as <strong>user</strong> use "Branko" username<br/>
+                            To login as <strong>manager</strong> use <strong>Dorotej</strong> username<br/>
+                            To login as <strong>user</strong> use <strong>Branko</strong> username<br/>
                             Password can be left as empty
                         </aside>
 
