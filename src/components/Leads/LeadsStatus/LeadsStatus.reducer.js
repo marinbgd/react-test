@@ -3,6 +3,8 @@ import {
     FETCH_LEADS_SUCCESS,
     FETCH_LEADS_ERROR,
 } from './LeadsStatus.actionTypes';
+import { LEADS_DELETE_SUCCESS } from '../LeadsDelete/LeadsDelete.actionTypes';
+import { removeLeadFromLeadsById } from './LeadsStatus.helpers';
 
 
 const INIT_STATE = {
@@ -34,6 +36,12 @@ export default function LeadsStatusReducer (state = INIT_STATE, action) {
                 isLoading: false,
                 isError: true,
                 data: null,
+            };
+
+        case LEADS_DELETE_SUCCESS:
+            return {
+                ...state,
+                data: removeLeadFromLeadsById(state.data, action.payload.deletedLeadId),
             };
 
         default:

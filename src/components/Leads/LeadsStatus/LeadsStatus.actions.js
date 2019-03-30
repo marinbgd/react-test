@@ -1,7 +1,7 @@
 import {
     FETCH_LEADS_IN_PROGRESS,
     FETCH_LEADS_SUCCESS,
-    FETCH_LEADS_ERROR
+    FETCH_LEADS_ERROR,
 } from './LeadsStatus.actionTypes';
 import _filter from 'lodash/filter';
 import { COMPANY_LEADS_MOCK, PERSON_LEADS_MOCK } from '../../../mock/leads.mock';

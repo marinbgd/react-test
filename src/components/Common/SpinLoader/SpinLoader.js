@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './SpinLoader.scss';
 
+
 const SpinLoader = (props) => {
     return (
         <div

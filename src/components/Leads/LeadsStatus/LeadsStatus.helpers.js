@@ -1,10 +1,6 @@
 import _filter from 'lodash/filter';
 
 
-export const leadsSelector = (leads = [], type) => {
-    console.log(type)
-    if (!type) {
-        return leads;
-    }
-    return _filter(leads, { type: type });
+export const removeLeadFromLeadsById = (leads = [], leadId) => {
+    return _filter(leads, lead => lead.id !== leadId);
 };

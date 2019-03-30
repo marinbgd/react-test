@@ -5,9 +5,10 @@ import LeadSingleDetail from './LeadSingleDetail/LeadSingleDetail';
 import LeadCategory from './LeadCategory/LeadCategory';
 import LeadPerson from './LeadPerson/LeadPerson';
 import LeadCompany from './LeadCompany/LeadCompany';
+import SpinLoader from 'Common/SpinLoader/SpinLoader';
 
 
-const LeadWrapper = ({lead}) => {
+const LeadWrapper = ({lead, isDeletable, deleteCallBack, isDeleteInProgress}) => {
     return (
         <div className={styles.LeadWrapper}>
             <LeadSingleDetail label="Type" value={lead.type} />
@@ -33,12 +34,30 @@ const LeadWrapper = ({lead}) => {
                     website={lead.website}
                 />
             }
+
+            {
+                isDeletable &&
+                <button
+                    type="button"
+                    className={styles.ButtonDelete}
+                    onClick={() => !isDeleteInProgress && deleteCallBack(lead.id)}
+                >
+                    {
+                        isDeleteInProgress &&
+                        <SpinLoader width="1em" height="1em" /> ||
+                        'X'
+                    }
+                </button>
+            }
         </div>
     );
 };
 
 LeadWrapper.propTypes = {
-    lead: PropTypes.object.isRequired
+    lead: PropTypes.object.isRequired,
+    isDeletable: PropTypes.bool.isRequired,
+    isDeleteInProgress: PropTypes.bool.isRequired,
+    deleteCallBack: PropTypes.func.isRequired,
 };
 
 export default LeadWrapper;
