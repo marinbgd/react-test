@@ -6,7 +6,7 @@ import { withRouter } from 'react-router';
 class LeadsStatus extends Component {
 
     state = {
-        type: this.props.match.params.type,
+        type: this.props.match.params.type
     };
 
     render () {
@@ -20,7 +20,9 @@ class LeadsStatus extends Component {
 }
 
 LeadsStatus.propTypes = {
-    location: PropTypes.object.isRequired
+    match: PropTypes.shape({
+        params: PropTypes.object.isRequired,
+    }),
 };
 
 export default withRouter(LeadsStatus);
