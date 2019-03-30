@@ -13,11 +13,11 @@ const fetchLeadsFromAPI = ({type, category}) => {
     let filteredLeads = [...ALL_LEADS];
 
     if (type && type !== 'all') { // ignore 'all' for filtering types
-        filteredLeads = _filter(ALL_LEADS, {type});
+        filteredLeads = _filter(filteredLeads, {type});
     }
 
     if (category) {
-        filteredLeads = _filter(ALL_LEADS, {category});
+        filteredLeads = _filter(filteredLeads, {category});
     }
     return Promise.resolve(filteredLeads);
 };

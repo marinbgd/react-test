@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import { bindActionCreators } from 'redux';
@@ -33,8 +33,13 @@ class LeadsStatus extends Component {
     }
 
     categoryClickHandler (category) {
-        const url = `${ROUTES.TYPES.INDEX}/${this.state.type}/${category}`;
-        this.props.push(url);
+
+        // if clicked category is already active, remove it
+        let urlToRedirect = `${ROUTES.TYPES.INDEX}/${this.state.type}`;
+        if (this.state.category !== category) {
+            urlToRedirect += `/${category}`;
+        }
+        this.props.push(urlToRedirect);
     }
 
     render () {
@@ -70,6 +75,9 @@ class LeadsStatus extends Component {
                                 />
                             ))
                         }
+                    </div> ||
+                    <div>
+                        No found leads for this criteria.
                     </div>
                 }
             </div>
