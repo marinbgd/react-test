@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import styles from './AboutPage.scss';
 
+
 class AboutPage extends Component {
-    render() {
+    render () {
         return (
             <div className="wrapper">
                 <h1 className={styles.MainPageTitle}>Interesting project features</h1>
@@ -90,6 +91,15 @@ class AboutPage extends Component {
                         <h4 className={styles.FeatureTitle}>Integrated HTTP development server and Hot reloading</h4>
                         <p>
                             <strong>Benefits</strong> - rapid fast development.
+                        </p>
+                    </li>
+                    <li className={styles.Feature}>
+                        <h4 className={styles.FeatureTitle}>Type checking</h4>
+                        <p>For type checking in project, <strong>prop-types</strong> library is used.</p>
+                        <p>
+                            <strong>Benefits</strong> - lightweight, simple, well-known library with good balance of
+                            catching early errors vs code size. Also, has great integration with IDEs (like WebStorm)
+                            and offers better code completion when used.
                         </p>
                     </li>
                     <li className={styles.Feature}>
