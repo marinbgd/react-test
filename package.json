@@ -219,10 +219,6 @@
             "./src/config/config.json"
           ],
           [
-            "ajax$",
-            "./src/util/ajax.js"
-          ],
-          [
             "Config",
             "./src/config"
           ],

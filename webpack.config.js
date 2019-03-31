@@ -11,7 +11,6 @@ module.exports = {
         alias: {
             lodash: 'lodash-es',
             config$: path.resolve(__dirname, 'src/config/config.json'),
-            ajax$: path.resolve(__dirname, 'src/util/ajax.js'),
             Config: path.resolve(__dirname, 'src/config'),
             Util: path.resolve(__dirname, 'src/util'),
             Images: path.resolve(__dirname, 'src/assets/images'),
