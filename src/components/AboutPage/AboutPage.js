@@ -78,7 +78,8 @@ class AboutPage extends Component {
                             Included ESLint rules inside package.json, included .editorconfig file, included aliases for
                             commonly used folders/files, included webpack.config.js in project root, so many popular
                             IDEs will automatically use defined rules. Lint checker will be triggered on every build and
-                            even incremental builds and will warn about irregularities.
+                            even incremental builds and will warn about irregularities. Running
+                            <code>yarn run prettier</code> from console will fix all code style issues.
                         </p>
                         <p>
                             <strong>Benefits</strong> - helping all team members having same code style and early
