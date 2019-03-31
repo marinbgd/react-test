@@ -1,20 +1,20 @@
 .LeadWrapper {
-  display: block;
-  position: relative;
-  color: $colorGrey;
-  padding: 1.5em;
-  margin-bottom: 0.5em;
-  border-bottom: 1px solid $colorGreyLight;
+    display: block;
+    position: relative;
+    color: $colorGrey;
+    padding: 1.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid $colorGreyLight;
 }
 
 .ButtonDelete {
-  position: absolute;
-  top: 0;
-  left:0;
-  color: $colorRed;
-  display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $colorRed;
+    display: inline-block;
 
-  outline: 0;
-  border: 0;
-  background: none;
+    outline: 0;
+    border: 0;
+    background: none;
 }

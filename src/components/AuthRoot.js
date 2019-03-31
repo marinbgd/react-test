@@ -16,6 +16,11 @@ const HomePage = Loadable( {
     loading: Loader,
 } );
 
+const AboutPage = Loadable( {
+    loader: () => import('./AboutPage/AboutPage'),
+    loading: Loader,
+} );
+
 const LeadsPage = Loadable( {
     loader: () => import('./Leads/Leads.root'),
     loading: Loader,
@@ -37,6 +42,7 @@ class AuthRoot extends Component {
                     <Switch>
                         <Route exact path={APP_ROUTES.HOME} render={ () => <HomePage username={this.props.username} />} />
                         <Route path={APP_ROUTES.LEADS} component={LeadsPage} />
+                        <Route path={APP_ROUTES.ABOUT} component={AboutPage} />
                         <Route path={APP_ROUTES.LOGIN} component={RedirectHome} />
                         <Route component={NotFoundPage} />
                     </Switch>

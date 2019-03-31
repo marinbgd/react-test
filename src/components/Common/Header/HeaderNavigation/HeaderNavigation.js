@@ -16,6 +16,12 @@ const HeaderNavigation = () => {
             <NavLink
                 className={"btn btn--link " + styles.HeaderNavLink}
                 activeClassName="btn--active"
+                to={ APP_ROUTES.ABOUT }>
+                About
+            </NavLink>
+            <NavLink
+                className={"btn btn--link " + styles.HeaderNavLink}
+                activeClassName="btn--active"
                 to={ APP_ROUTES.LEADS }>
                 Leads
             </NavLink>

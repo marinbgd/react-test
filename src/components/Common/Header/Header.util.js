@@ -1,5 +1,6 @@
 const URL_TO_NAME_MAP = {
     'leads': 'Leads',
+    'about': 'About',
     '/': 'Home',
 };
 
