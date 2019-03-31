@@ -1,31 +1,6 @@
 {
-    "IS_CONSOLE_VISIBLE": true,
+    "IS_CONSOLE_VISIBLE": false,
 
     "AJAX_REQUEST_DEFAULT_TIMEOUT": 30000,
-    "API_KYC_BASE_URL": "http://46.101.141.246:3000/v1",
-    "API_USER_SERVICE_BASE_URL": "http://46.101.141.246:3001/v1",
-    "API_MAIL_BASE_URL": "http://46.101.141.246:3002/v1",
-
-    "TRANSLATIONS": {
-        "DEFAULT_LANGUAGE_CODE": "en",
-        "AVAILABLE_LANGUAGE_CODES": ["en", "sr"],
-        "CROWDIN_URLS": {
-            "HOMEPAGE": "https://api.crowdin.com/api/project/dasadmin/export-file?file=homepage.json&language=sr-CS&key=b62f07b0015317fe85b312f9e1309f56"
-        }
-    },
-
-    "LANGUAGES": {
-        "ENGLISH": {
-            "CODE": "en",
-            "NAME": "English"
-        },
-        "POLISH": {
-            "CODE": "pl",
-            "NAME": "Polish"
-        },
-        "SERBIAN": {
-            "CODE": "sr",
-            "NAME": "Srpski"
-        }
-    }
+    "API_BASE_URL": "http://127.0.0.1:3000/v1"
 }

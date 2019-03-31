@@ -9,7 +9,6 @@ import Loadable from 'react-loadable';
 import Loader from './Common/Loader/Loader';
 import APP_ROUTES from 'Config/appRoutes';
 import RedirectHome from 'Common/Redirect/RedirectHome';
-import Notification from "Common/Notification/Notification";
 
 
 const HomePage = Loadable( {
@@ -41,8 +40,6 @@ class AuthRoot extends Component {
                         <Route path={APP_ROUTES.LOGIN} component={RedirectHome} />
                         <Route component={NotFoundPage} />
                     </Switch>
-
-                    <Notification />
                 </main>
 
                 <Footer/>

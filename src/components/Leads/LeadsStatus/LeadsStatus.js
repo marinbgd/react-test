@@ -12,6 +12,7 @@ import LeadsFilter from './LeadsFilter/LeadsFilter';
 import { isUserManager } from '../../User/User.helper';
 import { push } from 'react-router-redux';
 import ROUTES from '../Leads.routes';
+import { isDataArrayValid } from 'Util/dataChecker.util';
 
 
 class LeadsStatus extends Component {
@@ -60,8 +61,7 @@ class LeadsStatus extends Component {
                 }
 
                 {
-                    Array.isArray(this.props.leads) &&
-                    this.props.leads.length &&
+                    isDataArrayValid(this.props.leads) &&
                     <div>
                         <p>Count: <strong>{this.props.leads.length}</strong></p>
                         {

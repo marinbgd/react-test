@@ -18,7 +18,7 @@
     "remove-dist": "rimraf ./dist",
     "prebuild": "npm run lint && npm run test && npm run clean-dist",
     "build": "npm run prepareConfigForFeProduction && babel-node tools/build.js && npm run open:dist",
-    "buildProdFe": "npm run prepareConfigForFeProduction && webpack --progress --color -p --display-error-details --config webpack.config.prod.js",
+    "buildProdFe": "npm run remove-dist && npm run prepareConfigForFeProduction && webpack --progress --color -p --display-error-details --config webpack.config.prod.js",
     "prepareConfigForFeDevelopment": "export NODE_ENV=development && export BABEL_ENV=development && cp src/config/config.development.json src/config/config.json",
     "prepareConfigForFeProduction": "export NODE_ENV=production && export BABEL_ENV=production && cp src/config/config.production.json src/config/config.json",
     "test": "jest",
@@ -34,7 +34,7 @@
   "dependencies": {
     "axios": "0.18.0",
     "informed": "1.10.7",
-    "lodash": "4.17.10",
+    "lodash": "^4.17.11",
     "moment": "2.22.2",
     "node-polyglot": "2.3.0",
     "object-assign": "4.1.0",
