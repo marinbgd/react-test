@@ -44,8 +44,6 @@ module.exports = {
         // Tells React to build in prod mode. https://facebook.github.io/react/downloads.html
         new webpack.DefinePlugin(GLOBALS),
 
-        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),    //ignore moments locales which are not used in our bundle!
-
         // Generate an external css file with a hash in the filename
         new ExtractTextPlugin({
             filename: 'assets/css/[name].[md5:contenthash:hex:20].css',
