@@ -1,0 +1,32 @@
+.MainPageTitle {
+    margin-bottom: 2em;
+}
+
+.FeaturesWrapper {
+    width: 50%;
+    margin: auto;
+    transition: width 0.2s;
+}
+
+.Feature {
+    padding-bottom: 0.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid $colorGreyLightest;
+}
+
+.FeatureTitle {
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width: 800px) {
+    .FeaturesWrapper {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .FeaturesWrapper {
+        width: 100%;
+    }
+}
