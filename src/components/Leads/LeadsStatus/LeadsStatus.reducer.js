@@ -13,7 +13,8 @@ export default function LeadsStatusReducer(state = INIT_STATE, action) {
         case FETCH_LEADS_IN_PROGRESS:
             return {
                 ...state,
-                isLoading: true
+                isLoading: true,
+                data: null
             };
 
         case FETCH_LEADS_SUCCESS:

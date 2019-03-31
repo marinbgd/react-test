@@ -15,7 +15,12 @@ const fetchLeadsFromAPI = ({ type, category }) => {
     if (category) {
         filteredLeads = _filter(filteredLeads, { category });
     }
-    return Promise.resolve(filteredLeads);
+
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(filteredLeads);
+        }, 500);
+    });
 };
 
 export const getLeads = ({ type, category }) => dispatch => {

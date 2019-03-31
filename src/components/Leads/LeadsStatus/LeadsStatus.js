@@ -41,6 +41,8 @@ class LeadsStatus extends Component {
     }
 
     render() {
+        const hasNoLeads = this.props.leads && this.props.leads.length === 0;
+
         return (
             <div>
                 <p>
@@ -56,7 +58,7 @@ class LeadsStatus extends Component {
 
                 {this.props.isDataError && <NotLoadedWidget history={this.props.history} />}
 
-                {(isDataArrayValid(this.props.leads) && (
+                {isDataArrayValid(this.props.leads) && (
                     <div>
                         <p>
                             Count: <strong>{this.props.leads.length}</strong>
@@ -71,7 +73,11 @@ class LeadsStatus extends Component {
                             />
                         ))}
                     </div>
-                )) || <div>No found leads for this criteria.</div>}
+                )}
+
+                {!this.props.isDataLoading && !this.props.isDataError && hasNoLeads && (
+                    <div>No found leads for this criteria.</div>
+                )}
             </div>
         );
     }
