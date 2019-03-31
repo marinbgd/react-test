@@ -1,6 +1,0 @@
-{
-    "IS_CONSOLE_VISIBLE": true,
-
-    "AJAX_REQUEST_DEFAULT_TIMEOUT": 30000,
-    "API_BASE_URL": "http://127.0.0.1:3001/v1"
-}
