@@ -1,7 +1,9 @@
 html {
     box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
@@ -16,9 +18,9 @@ div {
 
 a,
 button,
-input[type="button"],
-input[type="submit"],
-textarea{
+input[type='button'],
+input[type='submit'],
+textarea {
     display: inline-block;
     text-decoration: none;
     outline: none;
@@ -29,7 +31,8 @@ input {
     outline: none;
 }
 
-button, a {
+button,
+a {
     cursor: pointer;
 }
 
@@ -53,6 +56,7 @@ select {
     white-space: nowrap;
 }
 
-b, strong {
+b,
+strong {
     font-weight: bold;
 }

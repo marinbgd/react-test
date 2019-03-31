@@ -11,9 +11,8 @@ import APP_ROUTES from 'Config/appRoutes';
 import _find from 'lodash/find';
 import { USERS as MOCK_USERS } from '../../mock/login.mock';
 
-
 const loginApi = username => {
-    let foundUser = _find(MOCK_USERS, {name: username});
+    let foundUser = _find(MOCK_USERS, { name: username });
     if (foundUser) {
         return Promise.resolve(foundUser);
     }
@@ -21,7 +20,7 @@ const loginApi = username => {
 };
 
 const getUserDataWithToken = access_token => {
-    let foundUser = _find(MOCK_USERS, {access_token});
+    let foundUser = _find(MOCK_USERS, { access_token });
     if (foundUser) {
         return Promise.resolve(foundUser);
     }
@@ -29,11 +28,11 @@ const getUserDataWithToken = access_token => {
 };
 
 export const login = (username, password) => dispatch => {
-    dispatch({type: USER_LOGIN_IN_PROGRESS});
+    dispatch({ type: USER_LOGIN_IN_PROGRESS });
 
     return loginApi(username, password)
         .then(userData => {
-            persistLoginData({access_token: userData.access_token});
+            persistLoginData({ access_token: userData.access_token });
 
             dispatch({
                 type: USER_LOGIN_SUCCESS,
@@ -53,14 +52,14 @@ export const login = (username, password) => dispatch => {
 };
 
 export const loginWithToken = (dispatch, access_token) => {
-    dispatch({type: USER_LOGIN_IN_PROGRESS});
+    dispatch({ type: USER_LOGIN_IN_PROGRESS });
 
     return getUserDataWithToken(access_token)
         .then(success => {
             dispatch({
                 type: USER_AUTO_LOGIN_SUCCESS,
                 payload: {
-                    loadedUserData: success,
+                    loadedUserData: success
                 }
             });
             return success;

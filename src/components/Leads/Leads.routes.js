@@ -4,6 +4,6 @@ export default {
         INDEX: '/leads/status',
         ALL: '/leads/status/all',
         PERSON: '/leads/status/person',
-        COMPANY: '/leads/status/company',
-    },
+        COMPANY: '/leads/status/company'
+    }
 };

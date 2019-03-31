@@ -2,8 +2,7 @@ import React from 'react';
 import styles from './LeadCompany.scss';
 import PropTypes from 'prop-types';
 
-
-const LeadCompany = ({name, contactPersonName, website}) => {
+const LeadCompany = ({ name, contactPersonName, website }) => {
     return (
         <div className={styles.LeadCompany}>
             <span className={styles.LeadCompanyValue}>{name}</span>
@@ -16,7 +15,7 @@ const LeadCompany = ({name, contactPersonName, website}) => {
 LeadCompany.propTypes = {
     name: PropTypes.string.isRequired,
     contactPersonName: PropTypes.string.isRequired,
-    website: PropTypes.string.isRequired,
+    website: PropTypes.string.isRequired
 };
 
 export default LeadCompany;

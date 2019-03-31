@@ -10,4 +10,4 @@ export const USER = {
     roles: ['user']
 };
 
-export const USERS = [ MANAGER, USER ];
+export const USERS = [MANAGER, USER];

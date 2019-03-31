@@ -6,17 +6,14 @@ import HeaderNavigation from './HeaderNavigation/HeaderNavigation';
 import { getTitleFromLocation } from './Header.util';
 import styles from './Header.scss';
 
-
-const Header = ({username}) => {
-
+const Header = ({ username }) => {
     return (
         <header className={styles.Header}>
-
             <div className="wrapper position-relative">
-                <HeaderNavigation/>
+                <HeaderNavigation />
 
                 <aside className={styles.UserMenuHolder}>
-                    <UserMenu username={username}/>
+                    <UserMenu username={username} />
                 </aside>
 
                 <h1 className={styles.Title}>{getTitleFromLocation(location.pathname)}</h1>

@@ -5,9 +5,7 @@ import { connect } from 'react-redux';
 import { logout } from './Logout.actions';
 import styles from './Logout.scss';
 
-
 class Logout extends Component {
-
     onLogoutClickHandler = () => {
         this.props.logout();
     };
@@ -16,7 +14,7 @@ class Logout extends Component {
         return (
             <button
                 onClick={this.onLogoutClickHandler}
-                className={ ['btn btn--link btn--block', styles.Button].join(' ') }
+                className={['btn btn--link btn--block', styles.Button].join(' ')}
                 disabled={this.props.LogoutReducer.isLoading}
             >
                 Logout
@@ -27,15 +25,22 @@ class Logout extends Component {
 
 Logout.propTypes = {
     logout: PropTypes.func.isRequired,
-    LogoutReducer: PropTypes.object.isRequired,
+    LogoutReducer: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state =>({
-    LogoutReducer: state.LogoutReducer,
+const mapStateToProps = state => ({
+    LogoutReducer: state.LogoutReducer
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators( {
-    logout,
-}, dispatch);
+const mapDispatchToProps = dispatch =>
+    bindActionCreators(
+        {
+            logout
+        },
+        dispatch
+    );
 
-export default connect(mapStateToProps, mapDispatchToProps)(Logout);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Logout);

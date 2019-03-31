@@ -7,9 +7,7 @@ import { Form, Text } from 'informed';
 import { usernameValidation } from 'Util/formValidation';
 import ErrorWidget from 'Common/Error/ErrorWidget';
 
-
 class LoginForm extends Component {
-
     state = {
         username: '',
         password: ''
@@ -25,17 +23,19 @@ class LoginForm extends Component {
         this.props.submitCallback(this.state.username, this.state.password);
     };
 
-    render () {
+    render() {
         return (
             <Form className={styles.Form} onSubmit={this.submitHandler}>
-                {({formState}) => (
+                {({ formState }) => (
                     <div>
                         <h1 className={styles.Title}>Hello,</h1>
                         <h1 className={styles.Subtitle}>Please login</h1>
 
                         <aside className={styles.Notification}>
-                            To login as <strong>manager</strong> use <strong>Dorotej</strong> username<br/>
-                            To login as <strong>user</strong> use <strong>Branko</strong> username<br/>
+                            To login as <strong>manager</strong> use <strong>Dorotej</strong> username
+                            <br />
+                            To login as <strong>user</strong> use <strong>Branko</strong> username
+                            <br />
                             Password can be left as empty
                         </aside>
 
@@ -50,10 +50,7 @@ class LoginForm extends Component {
                                 validateOnChange
                                 validate={usernameValidation}
                             />
-                            {
-                                formState.errors.username &&
-                                <ErrorWidget errorMessage={formState.errors.username}/>
-                            }
+                            {formState.errors.username && <ErrorWidget errorMessage={formState.errors.username} />}
                         </label>
 
                         <label className={styles.FormRow}>
@@ -67,25 +64,13 @@ class LoginForm extends Component {
                             />
                         </label>
 
-                        {
-                            this.props.isLoading &&
+                        {(this.props.isLoading && (
                             <label className={styles.FormRowSubmit}>
-                                <SpinLoader/>
+                                <SpinLoader />
                             </label>
-                            ||
-                            <Button
-                                buttonStyles={styles.SubmitBtn}
-                                label="Log in"
-                                type='submit'
-                            />
-                        }
+                        )) || <Button buttonStyles={styles.SubmitBtn} label="Log in" type="submit" />}
 
-                        {
-                            this.props.isError &&
-                            <div className={styles.Error}>
-                                {this.props.errorMessage}
-                            </div>
-                        }
+                        {this.props.isError && <div className={styles.Error}>{this.props.errorMessage}</div>}
                     </div>
                 )}
             </Form>
@@ -97,7 +82,7 @@ LoginForm.propTypes = {
     submitCallback: PropTypes.func.isRequired,
     isLoading: PropTypes.bool,
     isError: PropTypes.bool,
-    errorMessage: PropTypes.string,
+    errorMessage: PropTypes.string
 };
 
 LoginForm.defaultProps = {

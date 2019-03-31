@@ -1,5 +1,4 @@
 :global {
-
     .genericFormColumn {
         width: 100%;
         display: flex;
@@ -38,9 +37,8 @@
         color: $inputTextGray;
         font-size: 13px;
         font-weight: 500;
-        &:hover{
+        &:hover {
             cursor: pointer;
         }
     }
 }
-

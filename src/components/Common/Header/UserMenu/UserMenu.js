@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './UserMenu.scss';
 import Logout from '../Logout/Logout';
 
-
-const getMenuOpenedIconClassName = (isOpened) => {
+const getMenuOpenedIconClassName = isOpened => {
     let cssClasses = styles.Icon;
     if (isOpened) {
         cssClasses += ' ' + styles['Icon--isOpened'];
@@ -15,26 +14,25 @@ const getMenuOpenedIconClassName = (isOpened) => {
 };
 
 class UserMenu extends Component {
-
     state = {
         isMenuOpened: false
     };
 
-    componentDidMount () {
+    componentDidMount() {
         document.addEventListener('mousedown', this.clickOutsideHandler);
     }
 
-    componentWillUnmount () {
+    componentWillUnmount() {
         document.removeEventListener('mousedown', this.clickOutsideHandler);
     }
 
-    clickOutsideHandler = (event) => {
+    clickOutsideHandler = event => {
         if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
             this.closeMenu();
         }
     };
 
-    setWrapperRef = (node) => {
+    setWrapperRef = node => {
         this.wrapperRef = node;
     };
 
@@ -49,27 +47,24 @@ class UserMenu extends Component {
     };
 
     closeMenu = () => {
-        this.setState({isMenuOpened: false});
+        this.setState({ isMenuOpened: false });
     };
 
-    render () {
+    render() {
         return (
             <nav className={styles.UserMenu} ref={this.setWrapperRef}>
-                <button
-                    className={['btn btn--link', styles.Button].join(' ')}
-                    onClick={this.buttonClickHandler}
-                >
+                <button className={['btn btn--link', styles.Button].join(' ')} onClick={this.buttonClickHandler}>
                     {this.props.username}
                     <span className={getMenuOpenedIconClassName(this.state.isMenuOpened)}>&#62;</span>
                 </button>
 
-                {
-                    this.state.isMenuOpened &&
+                {this.state.isMenuOpened && (
                     <ul>
-                        <li className={styles.ListItem}><Logout/></li>
+                        <li className={styles.ListItem}>
+                            <Logout />
+                        </li>
                     </ul>
-                }
-
+                )}
             </nav>
         );
     }

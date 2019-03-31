@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './SpinLoader.scss';
 
-
-const SpinLoader = (props) => {
+const SpinLoader = props => {
     return (
         <div
-            className={ [ styles.Loader, props.customClass ].join(' ') }
+            className={[styles.Loader, props.customClass].join(' ')}
             style={{
                 borderRightColor: props.color,
                 borderBottomColor: props.color,
@@ -14,10 +13,10 @@ const SpinLoader = (props) => {
                 borderTopColor: props.colorTwo,
                 height: props.height,
                 width: props.width,
-                borderWidth: props.borderWidth,
+                borderWidth: props.borderWidth
             }}
         />
-    )
+    );
 };
 
 SpinLoader.propTypes = {
@@ -26,7 +25,7 @@ SpinLoader.propTypes = {
     color: PropTypes.string,
     colorTwo: PropTypes.string,
     borderWidth: PropTypes.string,
-    customClass: PropTypes.string,
+    customClass: PropTypes.string
 };
 
 SpinLoader.defaultProps = {
@@ -35,7 +34,7 @@ SpinLoader.defaultProps = {
     color: '#258F37',
     colorTwo: '#5D6888',
     borderWidth: '5px',
-    customClass: '',
+    customClass: ''
 };
 
 export default SpinLoader;

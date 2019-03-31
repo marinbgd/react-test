@@ -10,18 +10,17 @@ import Provider from 'react-redux/es/components/Provider';
 import { initPersistentLogin } from './components/User/User.persistentHelper';
 import './styles/styles.scss';
 
-
 const store = configureStore();
 
 initializeEnv();
-initPersistentLogin(store.dispatch).then( () => initReactApp() );
+initPersistentLogin(store.dispatch).then(() => initReactApp());
 
-function initReactApp () {
+function initReactApp() {
     render(
         <AppContainer>
             <Provider store={store}>
                 <ConnectedRouter history={history}>
-                    <Root/>
+                    <Root />
                 </ConnectedRouter>
             </Provider>
         </AppContainer>,
@@ -34,7 +33,7 @@ function initReactApp () {
             render(
                 <AppContainer>
                     <ConnectedRouter history={history}>
-                        <NewRoot/>
+                        <NewRoot />
                     </ConnectedRouter>
                 </AppContainer>,
                 document.getElementById('app')
@@ -42,5 +41,3 @@ function initReactApp () {
         });
     }
 }
-
-

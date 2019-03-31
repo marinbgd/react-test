@@ -1,25 +1,19 @@
-import {
-    FETCH_LEADS_IN_PROGRESS,
-    FETCH_LEADS_SUCCESS,
-    FETCH_LEADS_ERROR,
-} from './LeadsStatus.actionTypes';
+import { FETCH_LEADS_IN_PROGRESS, FETCH_LEADS_SUCCESS, FETCH_LEADS_ERROR } from './LeadsStatus.actionTypes';
 import { LEADS_DELETE_SUCCESS } from '../LeadsDelete/LeadsDelete.actionTypes';
 import { removeLeadFromLeadsById } from './LeadsStatus.helpers';
-
 
 const INIT_STATE = {
     isLoading: false,
     isError: false,
-    data: null,
+    data: null
 };
 
-export default function LeadsStatusReducer (state = INIT_STATE, action) {
+export default function LeadsStatusReducer(state = INIT_STATE, action) {
     switch (action.type) {
-
         case FETCH_LEADS_IN_PROGRESS:
             return {
                 ...state,
-                isLoading: true,
+                isLoading: true
             };
 
         case FETCH_LEADS_SUCCESS:
@@ -27,7 +21,7 @@ export default function LeadsStatusReducer (state = INIT_STATE, action) {
                 ...state,
                 isLoading: false,
                 isError: false,
-                data: action.payload.leads,
+                data: action.payload.leads
             };
 
         case FETCH_LEADS_ERROR:
@@ -35,13 +29,13 @@ export default function LeadsStatusReducer (state = INIT_STATE, action) {
                 ...state,
                 isLoading: false,
                 isError: true,
-                data: null,
+                data: null
             };
 
         case LEADS_DELETE_SUCCESS:
             return {
                 ...state,
-                data: removeLeadFromLeadsById(state.data, action.payload.deletedLeadId),
+                data: removeLeadFromLeadsById(state.data, action.payload.deletedLeadId)
             };
 
         default:

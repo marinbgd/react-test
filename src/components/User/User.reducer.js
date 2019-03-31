@@ -3,35 +3,33 @@ import {
     USER_LOGIN_SUCCESS,
     USER_LOGIN_ERROR,
     USER_AUTO_LOGIN_ERROR,
-    USER_AUTO_LOGIN_SUCCESS,
+    USER_AUTO_LOGIN_SUCCESS
 } from './User.actionTypes';
-
 
 const INIT_STATE = {
     isLoading: null,
     isError: null,
     errorMessage: null,
-    data: null,
+    data: null
 };
 
-export default function UserReducer (state = INIT_STATE, action) {
+export default function UserReducer(state = INIT_STATE, action) {
     switch (action.type) {
-
         case USER_LOGIN_IN_PROGRESS:
             return {
                 ...state,
-                isLoading: true,
+                isLoading: true
             };
 
         case USER_LOGIN_SUCCESS:
-        case USER_AUTO_LOGIN_SUCCESS:   // intentional fall-through
+        case USER_AUTO_LOGIN_SUCCESS: // intentional fall-through
             return {
                 ...state,
                 isLoading: false,
                 isError: false,
                 data: {
-                    user: action.payload.loadedUserData,
-                },
+                    user: action.payload.loadedUserData
+                }
             };
 
         case USER_LOGIN_ERROR:
@@ -40,7 +38,7 @@ export default function UserReducer (state = INIT_STATE, action) {
                 isLoading: false,
                 isError: true,
                 data: null,
-                errorMessage: action.error,
+                errorMessage: action.error
             };
 
         case USER_AUTO_LOGIN_ERROR:

@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './LeadSingleDetail.scss';
 
-
-const LeadSingleDetail = ({label, value, additionalValueClassName=''}) => {
+const LeadSingleDetail = ({ label, value, additionalValueClassName = '' }) => {
     return (
         <div className={styles.SingleDetail}>
             <span className={styles.SingleDetailLabel}>{label}:</span>
@@ -15,7 +14,7 @@ const LeadSingleDetail = ({label, value, additionalValueClassName=''}) => {
 LeadSingleDetail.propTypes = {
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
-    additionalValueClassName: PropTypes.string,
+    additionalValueClassName: PropTypes.string
 };
 
 export default LeadSingleDetail;

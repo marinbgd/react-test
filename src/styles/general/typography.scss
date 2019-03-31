@@ -1,4 +1,7 @@
-body, input, textarea, button {
+body,
+input,
+textarea,
+button {
     font-size: 14px;
     font-family: 'Proxima Nova', Arial, sans-serif;
 }
@@ -24,8 +27,8 @@ h2 {
 /* 20px */
 h3 {
     font-size: 1.4286em; /* 20px */
-    line-height: 1.0000em; /* 20px */
-    margin-top: 1.0000em;
+    line-height: 1em; /* 20px */
+    margin-top: 1em;
 }
 /* 18px */
 h4 {
@@ -36,12 +39,12 @@ h4 {
 /* 16px */
 h5 {
     font-size: 1.1429em; /* 16px */
-    line-height: 1.2500em; /* 20px */
-    margin-top: 1.2500em;
+    line-height: 1.25em; /* 20px */
+    margin-top: 1.25em;
 }
 /* 14px */
 h6 {
-    font-size: 1.0000em; /* 14px */
+    font-size: 1em; /* 14px */
     line-height: 1.4286em; /* 20px */
     margin-top: 1.4286em;
 }

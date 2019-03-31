@@ -10,37 +10,39 @@ import Loader from './Common/Loader/Loader';
 import APP_ROUTES from 'Config/appRoutes';
 import RedirectHome from 'Common/Redirect/RedirectHome';
 
-
-const HomePage = Loadable( {
+const HomePage = Loadable({
     loader: () => import('./HomePage/HomePage'),
-    loading: Loader,
-} );
+    loading: Loader
+});
 
-const AboutPage = Loadable( {
+const AboutPage = Loadable({
     loader: () => import('./AboutPage/AboutPage'),
-    loading: Loader,
-} );
+    loading: Loader
+});
 
-const LeadsPage = Loadable( {
+const LeadsPage = Loadable({
     loader: () => import('./Leads/Leads.root'),
-    loading: Loader,
-} );
+    loading: Loader
+});
 
-const NotFoundPage = Loadable( {
+const NotFoundPage = Loadable({
     loader: () => import('./NotFoundPage'),
-    loading: Loader,
-} );
-
+    loading: Loader
+});
 
 class AuthRoot extends Component {
     render() {
         return (
             <React.Fragment>
-                <Header username={this.props.username}/>
+                <Header username={this.props.username} />
 
                 <main className="main">
                     <Switch>
-                        <Route exact path={APP_ROUTES.HOME} render={ () => <HomePage username={this.props.username} />} />
+                        <Route
+                            exact
+                            path={APP_ROUTES.HOME}
+                            render={() => <HomePage username={this.props.username} />}
+                        />
                         <Route path={APP_ROUTES.LEADS} component={LeadsPage} />
                         <Route path={APP_ROUTES.ABOUT} component={AboutPage} />
                         <Route path={APP_ROUTES.LOGIN} component={RedirectHome} />
@@ -48,18 +50,18 @@ class AuthRoot extends Component {
                     </Switch>
                 </main>
 
-                <Footer/>
+                <Footer />
             </React.Fragment>
         );
     }
 }
 
 AuthRoot.propTypes = {
-    username: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired
 };
 
 const mapStateToProps = state => ({
-    username: (state.UserReducer.data && state.UserReducer.data.user && state.UserReducer.data.user.name),
+    username: state.UserReducer.data && state.UserReducer.data.user && state.UserReducer.data.user.name
 });
 
-export default withRouter( connect( mapStateToProps )( AuthRoot ) );
+export default withRouter(connect(mapStateToProps)(AuthRoot));

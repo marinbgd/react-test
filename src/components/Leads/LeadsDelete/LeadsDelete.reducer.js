@@ -1,23 +1,17 @@
-import {
-    LEADS_DELETE_IN_PROGRESS,
-    LEADS_DELETE_SUCCESS,
-    LEADS_DELETE_ERROR,
-} from './LeadsDelete.actionTypes';
-
+import { LEADS_DELETE_IN_PROGRESS, LEADS_DELETE_SUCCESS, LEADS_DELETE_ERROR } from './LeadsDelete.actionTypes';
 
 const INIT_STATE = {
     isLoading: false,
     isError: false,
-    data: null,
+    data: null
 };
 
-export default function LeadsDeleteReducer (state = INIT_STATE, action) {
+export default function LeadsDeleteReducer(state = INIT_STATE, action) {
     switch (action.type) {
-
         case LEADS_DELETE_IN_PROGRESS:
             return {
                 ...state,
-                isLoading: true,
+                isLoading: true
             };
 
         case LEADS_DELETE_SUCCESS:
@@ -25,7 +19,7 @@ export default function LeadsDeleteReducer (state = INIT_STATE, action) {
                 ...state,
                 isLoading: false,
                 isError: false,
-                data: action.payload.deletedLeadId,
+                data: action.payload.deletedLeadId
             };
 
         case LEADS_DELETE_ERROR:
@@ -33,7 +27,7 @@ export default function LeadsDeleteReducer (state = INIT_STATE, action) {
                 ...state,
                 isLoading: false,
                 isError: true,
-                data: null,
+                data: null
             };
 
         default:

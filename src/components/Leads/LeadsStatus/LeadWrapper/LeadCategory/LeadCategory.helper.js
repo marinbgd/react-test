@@ -1,6 +1,5 @@
 import styles from './LeadCategory.scss';
 
-
 export const getClassNameForCategory = categoryName => {
     switch (categoryName) {
         case 'won':
@@ -10,6 +9,6 @@ export const getClassNameForCategory = categoryName => {
         case 'new':
             return styles.New;
         default:
-            return ''
+            return '';
     }
 };

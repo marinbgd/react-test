@@ -5,33 +5,32 @@ import Loader from './Common/Loader/Loader';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
-
-const AuthRoot = Loadable( {
+const AuthRoot = Loadable({
     loader: () => import('./AuthRoot'),
-    loading: Loader,
-} );
+    loading: Loader
+});
 
-const NonAuthRoot = Loadable( {
+const NonAuthRoot = Loadable({
     loader: () => import('./NonAuthRoot'),
-    loading: Loader,
-} );
+    loading: Loader
+});
 
 const isUserLoggedInSelector = userData => !!userData;
 
-const AuthRootSwitcher = ({isUserLoggedIn}) => {
-    if ( isUserLoggedIn ) {
-        return <AuthRoot/>;
+const AuthRootSwitcher = ({ isUserLoggedIn }) => {
+    if (isUserLoggedIn) {
+        return <AuthRoot />;
     } else {
-        return <NonAuthRoot/>;
+        return <NonAuthRoot />;
     }
 };
 
 AuthRootSwitcher.propTypes = {
-    isUserLoggedIn: PropTypes.bool.isRequired,
+    isUserLoggedIn: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = state => ({
-    isUserLoggedIn: isUserLoggedInSelector( state.UserReducer.data ),
+    isUserLoggedIn: isUserLoggedInSelector(state.UserReducer.data)
 });
 
-export default withRouter( connect( mapStateToProps )( AuthRootSwitcher ) );
+export default withRouter(connect(mapStateToProps)(AuthRootSwitcher));

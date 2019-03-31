@@ -1,23 +1,17 @@
-import {
-    LOGOUT_IN_PROGRESS,
-    LOGOUT_SUCCESS,
-    LOGOUT_ERROR,
-} from './Logout.actionTypes';
-
+import { LOGOUT_IN_PROGRESS, LOGOUT_SUCCESS, LOGOUT_ERROR } from './Logout.actionTypes';
 
 const INIT_STATE = {
     isLoading: null,
     isError: null,
-    errorMessage: null,
+    errorMessage: null
 };
 
-const LogoutReducer = ( state = INIT_STATE, action ) => {
-    switch ( action.type ) {
-
+const LogoutReducer = (state = INIT_STATE, action) => {
+    switch (action.type) {
         case LOGOUT_IN_PROGRESS:
             return {
                 ...state,
-                isLoading: true,
+                isLoading: true
             };
 
         case LOGOUT_ERROR:
@@ -25,7 +19,7 @@ const LogoutReducer = ( state = INIT_STATE, action ) => {
                 ...state,
                 isLoading: false,
                 isError: true,
-                errorMessage: action.error,
+                errorMessage: action.error
             };
 
         case LOGOUT_SUCCESS:
@@ -33,7 +27,7 @@ const LogoutReducer = ( state = INIT_STATE, action ) => {
                 ...state,
                 isLoading: false,
                 isError: false,
-                errorMessage: null,
+                errorMessage: null
             };
 
         default:

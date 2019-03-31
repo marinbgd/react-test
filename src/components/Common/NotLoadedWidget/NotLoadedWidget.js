@@ -2,8 +2,7 @@ import React from 'react';
 import styles from './NotLoadedWidget.scss';
 import PropTypes from 'prop-types';
 
-
-const NotLoadedWidget = ({history}) => {
+const NotLoadedWidget = ({ history }) => {
     return (
         <aside className={styles.NotLoadedWidgetWrapper}>
             <div className={styles.NotLoadedWidget}>
@@ -11,17 +10,20 @@ const NotLoadedWidget = ({history}) => {
                 <p>Widget is not loaded.</p>
                 <p>Please refresh the page.</p>
 
-                <button type="button"
-                        onClick={() => {
-                            window.location.reload();
-                        }}
-                        className={['btn btn--link', styles.NotLoadedWidget__refreshBtn].join(' ')}>
+                <button
+                    type="button"
+                    onClick={() => {
+                        window.location.reload();
+                    }}
+                    className={['btn btn--link', styles.NotLoadedWidget__refreshBtn].join(' ')}
+                >
                     Refresh
                 </button>
 
                 <button
                     className={['btn btn--link', styles.NotLoadedWidget__refreshBtn].join(' ')}
-                    onClick={history.goBack}>
+                    onClick={history.goBack}
+                >
                     Go Back
                 </button>
             </div>

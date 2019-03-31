@@ -6,7 +6,6 @@ const array_3 = {};
 const array_4 = [];
 const array_5 = [1, 2, 3];
 
-
 describe('dataChecker', () => {
     it('works fine for array_1', () => {
         expect(isDataArrayValid(array_1)).toBe(false);

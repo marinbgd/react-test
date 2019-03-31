@@ -8,7 +8,7 @@ export const PERSON_LEADS_MOCK = [
         mobilePhone: '902-590-049',
         email: 'jason.born@fakemail.com',
         category: 'new',
-        type: 'person',
+        type: 'person'
     },
     {
         id: '14ded',
@@ -19,7 +19,7 @@ export const PERSON_LEADS_MOCK = [
         mobilePhone: '55256230',
         email: 'aylin.helseth@example.com',
         category: 'new',
-        type: 'person',
+        type: 'person'
     },
     {
         id: 'd43e7',
@@ -30,7 +30,7 @@ export const PERSON_LEADS_MOCK = [
         mobilePhone: '(626)-372-3872',
         email: 'rosmarie.dasilva@example.com',
         category: 'won',
-        type: 'person',
+        type: 'person'
     },
     {
         id: '042ed',
@@ -41,7 +41,7 @@ export const PERSON_LEADS_MOCK = [
         mobilePhone: '(23) 2811-2039',
         email: 'camila.freitas@example.com',
         category: 'lost',
-        type: 'person',
+        type: 'person'
     },
     {
         id: 'yy6ed',
@@ -52,9 +52,8 @@ export const PERSON_LEADS_MOCK = [
         mobilePhone: '28716548',
         email: 'mateusz.kydland@example.com',
         category: 'won',
-        type: 'person',
-    },
-
+        type: 'person'
+    }
 ];
 
 export const COMPANY_LEADS_MOCK = [
@@ -67,7 +66,7 @@ export const COMPANY_LEADS_MOCK = [
         email: 'mecava@excample.com',
         website: 'http://mecava.com',
         category: 'won',
-        type: 'company',
+        type: 'company'
     },
     {
         id: '9a519',
@@ -78,6 +77,6 @@ export const COMPANY_LEADS_MOCK = [
         email: 'donald@ea.com',
         website: 'http://ea.com',
         category: 'lost',
-        type: 'company',
-    },
+        type: 'company'
+    }
 ];

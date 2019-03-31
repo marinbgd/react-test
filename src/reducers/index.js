@@ -6,18 +6,18 @@ import UserReducer from '../components/User/User.reducer';
 import LogoutReducer from 'Common/Header/Logout/Logout.reducer';
 import LeadsReducer from '../components/Leads/Leads.reducer';
 
-
-const rootReducer = combineReducers( {
+const rootReducer = combineReducers({
     UserReducer,
     LogoutReducer,
     LeadsReducer,
-    routing: routerReducer,
-} );
+    routing: routerReducer
+});
 
-export default function ( state, action ) { // reset all reducers on Logout event
-    if ( action.type === LOGOUT_SUCCESS ) {
+export default function(state, action) {
+    // reset all reducers on Logout event
+    if (action.type === LOGOUT_SUCCESS) {
         clearPersistentLoginData();
         state = undefined;
     }
-    return rootReducer( state, action );
+    return rootReducer(state, action);
 }

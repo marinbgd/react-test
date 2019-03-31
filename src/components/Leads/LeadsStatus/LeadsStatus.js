@@ -14,27 +14,24 @@ import { push } from 'react-router-redux';
 import ROUTES from '../Leads.routes';
 import { isDataArrayValid } from 'Util/dataChecker.util';
 
-
 class LeadsStatus extends Component {
-
     state = {
         type: this.props.match.params.type,
-        category: this.props.match.params.category,
+        category: this.props.match.params.category
     };
 
-    componentDidMount () {
+    componentDidMount() {
         this.props.getLeads({
             type: this.state.type,
-            category: this.state.category,
+            category: this.state.category
         });
     }
 
-    deleteLead (leadId) {
+    deleteLead(leadId) {
         this.props.deleteLeadById(leadId);
     }
 
-    categoryClickHandler (category) {
-
+    categoryClickHandler(category) {
         // if clicked category is already active, remove it
         let urlToRedirect = `${ROUTES.TYPES.INDEX}/${this.state.type}`;
         if (this.state.category !== category) {
@@ -43,43 +40,38 @@ class LeadsStatus extends Component {
         this.props.push(urlToRedirect);
     }
 
-    render () {
+    render() {
         return (
             <div>
-                <p>Type: <strong>{this.state.type || 'All'}</strong></p>
+                <p>
+                    Type: <strong>{this.state.type || 'All'}</strong>
+                </p>
 
-                <LeadsFilter categoryClickCallBack={this.categoryClickHandler.bind(this)} activeCategory={this.state.category} />
+                <LeadsFilter
+                    categoryClickCallBack={this.categoryClickHandler.bind(this)}
+                    activeCategory={this.state.category}
+                />
 
-                {
-                    this.props.isDataLoading &&
-                    <Loader/>
-                }
+                {this.props.isDataLoading && <Loader />}
 
-                {
-                    this.props.isDataError &&
-                    <NotLoadedWidget history={this.props.history}/>
-                }
+                {this.props.isDataError && <NotLoadedWidget history={this.props.history} />}
 
-                {
-                    isDataArrayValid(this.props.leads) &&
+                {(isDataArrayValid(this.props.leads) && (
                     <div>
-                        <p>Count: <strong>{this.props.leads.length}</strong></p>
-                        {
-                            this.props.leads.map((lead) => (
-                                <LeadWrapper
-                                    key={lead.id}
-                                    lead={lead}
-                                    isDeleteInProgress={this.props.isLeadDeleteInProgress}
-                                    isDeletable={this.props.isUserManager}
-                                    deleteCallBack={this.deleteLead.bind(this)}
-                                />
-                            ))
-                        }
-                    </div> ||
-                    <div>
-                        No found leads for this criteria.
+                        <p>
+                            Count: <strong>{this.props.leads.length}</strong>
+                        </p>
+                        {this.props.leads.map(lead => (
+                            <LeadWrapper
+                                key={lead.id}
+                                lead={lead}
+                                isDeleteInProgress={this.props.isLeadDeleteInProgress}
+                                isDeletable={this.props.isUserManager}
+                                deleteCallBack={this.deleteLead.bind(this)}
+                            />
+                        ))}
                     </div>
-                }
+                )) || <div>No found leads for this criteria.</div>}
             </div>
         );
     }
@@ -88,7 +80,7 @@ class LeadsStatus extends Component {
 LeadsStatus.propTypes = {
     history: PropTypes.object.isRequired,
     match: PropTypes.shape({
-        params: PropTypes.object.isRequired,
+        params: PropTypes.object.isRequired
     }),
 
     getLeads: PropTypes.func.isRequired,
@@ -100,7 +92,7 @@ LeadsStatus.propTypes = {
     isUserManager: PropTypes.bool.isRequired,
     isLeadDeleteInProgress: PropTypes.bool.isRequired,
 
-    leads: PropTypes.array,
+    leads: PropTypes.array
 };
 
 const mapStateToProps = state => ({
@@ -108,13 +100,20 @@ const mapStateToProps = state => ({
     isDataError: state.LeadsReducer.LeadsStatusReducer.isError,
     leads: state.LeadsReducer.LeadsStatusReducer.data,
     isUserManager: isUserManager(state.UserReducer.data.user.roles),
-    isLeadDeleteInProgress: state.LeadsReducer.LeadsDeleteReducer.isLoading,
+    isLeadDeleteInProgress: state.LeadsReducer.LeadsDeleteReducer.isLoading
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-    getLeads,
-    deleteLeadById,
-    push,
-}, dispatch);
+const mapDispatchToProps = dispatch =>
+    bindActionCreators(
+        {
+            getLeads,
+            deleteLeadById,
+            push
+        },
+        dispatch
+    );
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(LeadsStatus));
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(withRouter(LeadsStatus));
