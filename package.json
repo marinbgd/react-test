@@ -12,7 +12,7 @@
         "start": "npm run prepareConfigForFeDevelopment && concurrently -k -r -s first \"npm run test:watch\" \"npm run open:src\" \"npm run lint:watch\"",
         "open:src": "babel-node tools/srcServer.js",
         "open:dist": "babel-node tools/distServer.js",
-        "lint": "esw webpack.config.* src tools --color",
+        "lint": "esw src --color",
         "lint:watch": "npm run lint -- --watch",
         "clean-dist": "npm run remove-dist && mkdir dist",
         "remove-dist": "rimraf ./dist",
@@ -236,11 +236,5 @@
     },
     "prettier": {
         "singleQuote": true
-    },
-    "files.autoSave": "onFocusChange",
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "eslint.autoFixOnSave": true,
-    "eslint.enable": true,
-    "prettier.singleQuote": true
+    }
 }

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import styles from './AboutPage.scss';
 
-
 class AboutPage extends Component {
-    render () {
+    render() {
         return (
             <div className="wrapper">
                 <h1 className={styles.MainPageTitle}>Interesting project features</h1>
@@ -69,7 +68,7 @@ class AboutPage extends Component {
                         <p>
                             <strong>Benefits</strong> - even junior developers cannot make mistakes with same name CSS
                             classes and cannot make a mess. Also, it is easier for anybody new to join the project.
-                            Potentially, performance and size of the build can be better, because of the webpack's tree
+                            Potentially, performance and size of the build can be better, because of the webpacks tree
                             shaking feature - it would not include code that is never used - imported.
                         </p>
                     </li>
@@ -95,7 +94,9 @@ class AboutPage extends Component {
                     </li>
                     <li className={styles.Feature}>
                         <h4 className={styles.FeatureTitle}>Type checking</h4>
-                        <p>For type checking in project, <strong>prop-types</strong> library is used.</p>
+                        <p>
+                            For type checking in project, <strong>prop-types</strong> library is used.
+                        </p>
                         <p>
                             <strong>Benefits</strong> - lightweight, simple, well-known library with good balance of
                             catching early errors vs code size. Also, has great integration with IDEs (like WebStorm)
