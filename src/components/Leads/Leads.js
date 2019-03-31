@@ -12,6 +12,9 @@ class Leads extends Component {
                 <div className="wrapper position-relative">
                     <h1>Leads</h1>
 
+                    <p>This is the Leads page.</p>
+                    <p>Please use the links inside the blue header to start.</p>
+
                     {/* key will ensure rendering new component when type changes */}
                     <Route
                         path={LEADS_ROUTES.TYPES.INDEX + '/:type?/:category?'}

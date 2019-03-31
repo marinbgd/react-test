@@ -1,5 +1,12 @@
 .LeadCompany {
+    padding: 0.25em 0;
+    background-color: $colorGreyLightBluish;
 }
 
-.LeadCompanyValue {
+.CompanyName {
+    font-weight: bold;
+}
+.CompanyLink {
+    display: block;
+    color: $colorGold;
 }
